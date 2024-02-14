@@ -1,0 +1,37 @@
+*&---------------------------------------------------------------------*
+*& Report ZEMP_2
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+REPORT Z_COPY_PRGM.
+
+TABLES ZEMP_TKS.
+
+*SELECT * FROM ZEMP_TKS.
+*  WRITE: / ZEMP_TKS-SURNAME.
+*  ENDSELECT.
+
+ULINE.
+
+  SELECT * FROM ZEMP_TKS.
+  WRITE / ZEMP_TKS-SURNAME.
+  WRITE / ZEMP_TKS-LASTNAME.
+  WRITE / ZEMP_TKS-DOB.
+  ENDSELECT.
+
+ULINE.
+
+ SELECT * FROM ZEMP_TKS.
+  WRITE: / ZEMP_TKS-SURNAME,
+         ZEMP_TKS-LASTNAME,
+         ZEMP_TKS-DOB.
+ENDSELECT.
+
+
+ULINE.
+
+DATA NEWNAME LIKE ZEMP_TKS-SURNAME.
+
+NEWNAME = 'MANGO00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'.
+
+WRITE: NEWNAME.
